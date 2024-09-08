@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AI Enabled Water Well Predictor</title>
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+   
+
+    <style>
+      
+      .container-2 input {
+        align-items: center;
+        text-align: center;
+      }
+      .container-2 #submit {
+        display: block;
+        margin: 0 auto;
+      }
+      .container-2 .logincenter {
+        display: block;
+        margin: 0 auto;
+        width: 360px;
+        padding: 1% 0;
+        font-size: large;
+      }
+      .container h1 {
+        color: blueviolet;
+      }
+      h1 {
+        text-align: center;
+        display: block;
+        color: blueviolet;
+      }
+      h4 {
+        text-align: center;
+        color: blueviolet;
+        font-size: x-large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-1">
+      <header>
+
+        <a href="#" class="logo">Aqua<span class="fas fa-globe-asia"></span>Insight</a>
+    
+        <div id="menu" class="fas fa-bars"></div>
+    
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#project">project</a>
+            <a href="#donate">donate</a>
+            <a href="#team">team</a>
+            <a href="#testimonial">testimonial</a>
+            <a href="#events">events</a>
+        </nav>
+    
+    </header>
+
+      <div class="container">
+        <div class="login">
+          <h1 style="padding-top: 111px; font-size: xxx-large;">AI Enabled Ground Water Well Predictor</h1>
+          <br /><br />
+
+          <div class="container-2">
+            <form action="{{ url_for('predict')}}" method="post">
+              <input style="background-color: rgb(223, 221, 221);border-radius: 3px;"
+                class="logincenter"
+                type="text"
+                name="Latitude"
+                placeholder="Enter Latitude"
+                required="required"
+              /><br /><br />
+              <input style="background-color: rgb(223, 221, 221);border-radius: 3px;"
+                class="logincenter"
+                type="text"
+                name="Longitude"
+                placeholder="Enter Longitude"
+                required="required"
+              />
+              <br /><br />
+
+              <p>
+                <button
+                  id="submit"
+                  type="submit"
+                  class="btn btn-primary btn-block btn-large"
+                >
+                  Predict
+                </button>
+              </p>
+            </form>
+
+            <br />
+            <br />
+            <h4>{{ prediction_text }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <section class="home" id="home">
+
+        <div class="content">
+            <h3 style="font-family: cursive;">Predict Ground WAter Level Before Drilling</h3>
+            <p>AquaInsight is a cutting-edge startup dedicated to revolutionizing water well management through the application of artificial intelligence (AI). Our mission is to provide accurate and timely predictions for ground water level , enabling more efficient and sustainable water resource management.
+
+            </p>
+            <a href="#" class="btn">get started</a>
+        </div>
+    
+      </section>
+    
+
+
+      <section class="team" id="team">
+
+        <h1 class="heading">OUR Team</h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+              <img src="{{ url_for('static', filename='images/Himanshu_image.jpg') }}" alt="Your Image">
+                <!-- <img src="./Himanshu_image.jpg" alt=""> -->
+                <div class="info">
+                    <h3>Himanshu</h3>
+                    <p>Machine Learning | UI & UX Designer |Web Developer</p>
+                    <div class="share">
+                        <a href="#" class="fab fa-github"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box">
+              <img src="{{ url_for('static', filename='images/Adarsh-new.jpg') }}" alt="Your Image">
+                <div class="info">
+                    <h3>Adarsh Mishra</h3>
+                    <p>Machine Learning | Web Developer</p>
+                    <div class="share">
+                      <a href="#" class="fab fa-github"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box">
+              <img src="{{ url_for('static', filename='images/ankita-new.png') }}" alt="Your Image">
+                <div class="info">
+                    <h3>Ankita Yadav</h3>
+                    <p>Web Developer</p>
+                    <div class="share">
+                      <a href="#" class="fab fa-github"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box">
+              <img src="{{ url_for('static', filename='images/Aditi.png') }}" alt="Your Image">
+                <div class="info">
+                    <h3>Aditi Bhakta</h3>
+                    <p>Web Developer</p>
+                    <div class="share">
+                      <a href="#" class="fab fa-github"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <section class="team" id="team">
+
+      <h1 class="heading">OUR Mentor</h1>
+  
+      <div class="box-container">
+  
+  
+          <div class="box">
+            <img src="{{ url_for('static', filename='images/Prakash.jpg') }}" alt="Your Image">
+              <div class="info">
+                  <h3>Dr Prakash Kumar Singh</h3>
+                  <p>AI & ML Expert | HOD CSE Department</p>
+                  <div class="share">
+                    <a href="#" class="fab fa-github"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                  </div>
+              </div>
+          </div>
+  
+          
+          <div class="box">
+            <img src="{{ url_for('static', filename='images/Saket.jpg') }}" alt="Your Image">
+              <div class="info">
+                  <h3>Mr Saket Rusia</h3>
+                  <p>Civil Expert | Head of TPC RECM</p>
+                  <div class="share">
+                    <a href="#" class="fab fa-github"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+  </section>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+</div>
+
+<h1 class="credit"> created by <a href="#"> AquaInsight - Team </a> | all rights reserved@2024 </h1>
+
+</div>
+
+
+
+
