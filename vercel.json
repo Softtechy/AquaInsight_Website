@@ -10,7 +10,5 @@
       "src": "/(.*)",
       "dest": "app.py"
     }
-  ],
-  "pythonVersion": "3.9"
+  ]
 }
-
